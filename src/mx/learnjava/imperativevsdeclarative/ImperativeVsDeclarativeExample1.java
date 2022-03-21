@@ -24,7 +24,6 @@ public class ImperativeVsDeclarativeExample1 {
          */
         int sum1= IntStream.rangeClosed(0,100)
                 //.parallel()
-                .map(Integer::new)
                 .sum();
 
         System.out.println("sum1 : " + sum1);
