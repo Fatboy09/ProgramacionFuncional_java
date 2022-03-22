@@ -10,6 +10,14 @@ public class Student {
 	private List<String> activities;
 	
 	
+	public Student() {
+		
+	}
+	
+	public Student(String _name) {
+		this.name = _name;
+	}
+	
 	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
 		super();
 		this.name = name;
@@ -47,6 +55,9 @@ public class Student {
 	}
 	public void setActivities(List<String> activities) {
 		this.activities = activities;
+	}
+	public void printListActivities() {
+		System.out.println(activities);
 	}
 	@Override
 	public String toString() {
