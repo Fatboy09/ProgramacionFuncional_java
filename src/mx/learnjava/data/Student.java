@@ -48,6 +48,9 @@ public class Student {
 	public void setActivities(List<String> activities) {
 		this.activities = activities;
 	}
+	public void printListActivities() {
+		System.out.println(activities);
+	}
 	@Override
 	public String toString() {
 		return "Student {name=" + name + ", gradeLevel=" + gradeLevel + ", gpa=" + gpa + ", gender=" + gender
