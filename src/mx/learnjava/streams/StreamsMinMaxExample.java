@@ -13,6 +13,11 @@ public class StreamsMinMaxExample {
 			.reduce(0,(x,y) -> x > y? x:y);
 	}
 	
+	public static Optional<Integer> findMinValue(List<Integer> numbers) {
+		return numbers.stream()
+			.reduce((x,y) -> x < y? x:y);
+	}
+	
 	public static Optional<Integer> findMaxValueOptional(List<Integer> numbers) {
 		return numbers.stream()
 			.reduce((x,y) -> x > y? x:y);
@@ -20,14 +25,22 @@ public class StreamsMinMaxExample {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Integer> integerList = Arrays.asList(6,7,8,9,10);
-		//List<Integer> integerList = new ArrayList<Integer>();
+		//List<Integer> integerList = Arrays.asList(6,7,8,9,10);
+		List<Integer> integerList = new ArrayList<Integer>();
 		System.out.println("Max value: " + findMaxValue(integerList));
 		
 		Optional<Integer> maxValueOptional = findMaxValueOptional(integerList);
 		System.out.println("Optional Max is: " + maxValueOptional);
 		if(maxValueOptional.isPresent()) {
 			System.out.println("Max Value using optional: " + maxValueOptional.get());
+		} else {
+			System.out.println("Input list is empty");
+		}
+		System.out.println("<<<<<<<<<<<<<<<<<<<<<");
+		Optional<Integer> minValue = findMinValue(integerList);
+		System.out.println("min Value Optional: " + minValue);
+		if(minValue.isPresent()) {
+			System.out.println("The minimum value is: " + minValue.get());
 		} else {
 			System.out.println("Input list is empty");
 		}
